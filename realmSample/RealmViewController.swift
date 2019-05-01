@@ -13,35 +13,35 @@ class RealmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
+    var personMemo: Results<Person>!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let realm = try! Realm()
-        let results = realm.objects(Person.self)
-        print(results)
         
+        let realm = try! Realm()
+        personMemo = realm.objects(Person.self)
+        tableView.reloadData()
     }
     
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return personMemo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
-        
-        let realm = try! Realm()
 
         let nameLabel = cell.contentView.viewWithTag(1) as! UILabel
         let ageLabel = cell.contentView.viewWithTag(2) as! UILabel
         let genderLabel = cell.contentView.viewWithTag(3) as! UILabel
-//
-        let names = realm.objects(Person.self).value(forKey: "name")
         
-//        let namesNumber = results[indexPath.row]
-
+        let realm = try! Realm()
+        personMemo = realm.objects(Person.self)
+//
+        let person = personMemo[indexPath.row]
+        nameLabel.text = person.name
+        ageLabel.text = String(person.age)
+        genderLabel.text = person.gender
+        
         return cell
     }
     /*

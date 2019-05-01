@@ -15,14 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     
-    @IBOutlet weak var realmName: UILabel!
-    @IBOutlet weak var realmAge: UILabel!
-    @IBOutlet weak var realmGender: UILabel!
-    
+    var personMemo: Results<Person>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let realm = try! Realm()
+        personMemo = realm.objects(Person.self)
     }
 
     @IBAction func inputBtn(_ sender: Any) {
@@ -40,14 +39,6 @@ class ViewController: UIViewController {
             print("成功")
         }
     }
-    
-    @IBAction func realmBtn(_ sender: Any) {
-        let realm = try! Realm()
-        let results = realm.objects(Person.self).value(forKey: "name")
-        print(results)
-        
-    }
-    
     
 }
 

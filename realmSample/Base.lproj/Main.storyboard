@@ -73,30 +73,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="realm"/>
                                 <connections>
-                                    <action selector="realmBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p7h-Sz-5hY"/>
+                                    <segue destination="BC6-hv-ZDS" kind="show" id="i60-Eu-gBq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8is-cn-TpL">
-                                <rect key="frame" x="193" y="746" width="29" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-fo-s9N">
+                                <rect key="frame" x="192" y="742" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-hw-hpS">
-                                <rect key="frame" x="339" y="746" width="55" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4J-OK-CzC">
-                                <rect key="frame" x="20" y="746" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="test"/>
+                                <connections>
+                                    <action selector="testBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qa3-Kj-OSQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -105,9 +92,6 @@
                         <outlet property="ageTextField" destination="MuQ-m4-15U" id="Fvt-dB-mah"/>
                         <outlet property="genderTextField" destination="Ghq-k1-NRf" id="s3M-nl-qmT"/>
                         <outlet property="nameTextField" destination="D5y-S7-y3w" id="wem-xW-sVy"/>
-                        <outlet property="realmAge" destination="8is-cn-TpL" id="bIA-cd-rYN"/>
-                        <outlet property="realmGender" destination="cJZ-hw-hpS" id="92C-Jq-nQM"/>
-                        <outlet property="realmName" destination="h4J-OK-CzC" id="g9M-Pa-dGe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
