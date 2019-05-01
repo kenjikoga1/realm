@@ -34,8 +34,8 @@ class RealmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let ageLabel = cell.contentView.viewWithTag(2) as! UILabel
         let genderLabel = cell.contentView.viewWithTag(3) as! UILabel
         
-        let realm = try! Realm()
-        personMemo = realm.objects(Person.self)
+//        let realm = try! Realm()
+//        personMemo = realm.objects(Person.self)
 //
         let person = personMemo[indexPath.row]
         nameLabel.text = person.name

@@ -13,4 +13,10 @@ class Person: Object {
     @objc dynamic var name = ""
     @objc dynamic var age:Int = 0
     @objc dynamic var gender = ""
+    @objc dynamic var id = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
 }

@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         person.name = nameTextField.text ?? ""
         person.age = Int(ageTextField.text!)!
         person.gender = genderTextField.text ?? ""
+        person.id = NSUUID().uuidString
         
         try! realm.write {
             realm.add(person)
