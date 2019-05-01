@@ -40,7 +40,7 @@ class RealmViewController: UIViewController,UITableViewDataSource,UITableViewDel
 //
         let names = realm.objects(Person.self).value(forKey: "name")
         
-        let namesNumber = results[indexPath.row]
+//        let namesNumber = results[indexPath.row]
 
         return cell
     }
