@@ -17,13 +17,18 @@ class ViewController: UIViewController {
     
     var personMemo: Results<Person>!
     
-    var cellNumber:String? //
+    var cellNumber:Int = 0 //
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let realm = try! Realm()
         personMemo = realm.objects(Person.self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let person = personMemo[cellNumber]
+        nameTextField.text = person.name
     }
 
     @IBAction func inputBtn(_ sender: Any) {

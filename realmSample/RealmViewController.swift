@@ -48,12 +48,14 @@ class RealmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     // MARK: - Navigation
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailSegue", sender: personMemo[indexPath.row])
+    }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue"{
             let vc = segue.destination as! ViewController
-            vc.cellNumber = personMemo[(tableView.indexPathForSelectedRow?.row)!]
+            vc.cellNumber = personMemo[indexPath.row]
         }
     }
     
