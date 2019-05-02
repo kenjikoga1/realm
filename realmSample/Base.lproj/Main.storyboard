@@ -73,7 +73,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="realm"/>
                                 <connections>
-                                    <segue destination="BC6-hv-ZDS" kind="show" id="i60-Eu-gBq"/>
+                                    <segue destination="BC6-hv-ZDS" kind="show" identifier="detailSegue" id="i60-Eu-gBq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-fo-s9N">

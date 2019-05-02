@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     var personMemo: Results<Person>!
     
+    var cellNumber:String? //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
