@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //tableViewから戻ってきたときに入力
         let person = personMemo[cellNumber]
         nameTextField.text = person.name
         ageTextField.text = String(person.age)
@@ -35,20 +36,28 @@ class ViewController: UIViewController {
 
     @IBAction func inputBtn(_ sender: Any) {
         
-        let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        let person = Person()
-        person.name = nameTextField.text ?? ""
-        person.age = Int(ageTextField.text!)!
-        person.gender = genderTextField.text ?? ""
-        person.id = NSUUID().uuidString
-        
-        try! realm.write {
-            realm.add(person)
-            print("成功")
-            print(personMemo)
+        //空の場合
+        if let text = nameTextField.text, text.isEmpty{
+            let realm = try! Realm()
+            //RealmのURLを取得
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
+            //PersonクラスにtextFieldの内容を記録
+            let person = Person()
+            person.name = nameTextField.text ?? ""
+            person.age = Int(ageTextField.text!)!
+            person.gender = genderTextField.text ?? ""
+            person.id = NSUUID().uuidString
+            //Realmに記録
+            try! realm.write {
+                realm.add(person)
+                print("成功")
+                print(personMemo)
+            }
+        }else{
+            //空でない場合　viewWillApearに入っているものを編集して更新
+            
         }
+        
     }
     
 }

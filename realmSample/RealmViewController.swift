@@ -47,15 +47,15 @@ class RealmViewController: UIViewController,UITableViewDataSource,UITableViewDel
         return cell
     }
     
-    // MARK: - Navigation
+    // detailSegueを使って遷移
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "detailSegue", sender: personMemo[indexPath.row])
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let vc = segue.destination as! ViewController
-            vc.cellNumber = personMemo![Int(tableView.indexPathForSelectedRow!.row)]
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            let vc = segue.destination as! ViewController
+//            vc.cellNumber = personMemo![tableView.indexPathForSelectedRow!]
+//    }
     
 
 }
