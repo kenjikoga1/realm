@@ -55,7 +55,7 @@ class RealmViewController: UIViewController,UITableViewDataSource,UITableViewDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue"{
             let vc = segue.destination as! ViewController
-            vc.cellNumber = personMemo[indexPath.row]
+            vc.cellNumber = personMemo![Int(tableView.indexPathForSelectedRow!.row)]
         }
     }
     
