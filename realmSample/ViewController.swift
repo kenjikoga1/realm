@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let person = personMemo[cellNumber]
         nameTextField.text = person.name
+        ageTextField.text = String(person.age)
+        genderTextField.text = person.gender
     }
 
     @IBAction func inputBtn(_ sender: Any) {
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
         try! realm.write {
             realm.add(person)
             print("成功")
+            print(personMemo)
         }
     }
     
